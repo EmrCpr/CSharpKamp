@@ -6,8 +6,14 @@
         {
             //Degiskenler();//Burda ctrl r m yaptik asagidaki blogu secip method yapmis olduk kutuya koyduk diyebiliriz 
 
+            Vatandas vatandas1 = new Vatandas();
+
+            
+
             Console.ReadLine();
         }
+
+      
 
         private static void Degiskenler()
         {
@@ -26,13 +32,16 @@
             Console.WriteLine(tutar * 0.18);
         }
     }
-
+    //pascal casing (basharfleri buyuk oluyor)
     public class Vatandas
     {
-        string ad = "Emre";
-        string soyad = "Capar";
-        int dogumyil = 2002;
-        long tcNo = 12345678901;
+        //prop yazip tabtab yazinca gelir bunlar ozellik anlamina gelir
+        public string Ad { get; set; }//get {} acip kullanabilirsin fakat cok kullanilan bisey degil
+
+        public string Soyad { get; set;}
+
+        public int DogumYili { get; set;}
+        public long TcNo { get; set;}
 
     }
 }
