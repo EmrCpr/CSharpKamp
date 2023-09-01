@@ -9,9 +9,15 @@ namespace Business.Concrete
 {
     public class PersonManager
     {
-        public void ApplyForMask(Person person)
+        //encapsulation yaptik Persondan myobj1 ayarinda person cikardik ordan cekecez 
+        public void ApplyForMask(Person person)//(string firstName,string lastName,int yil yazdin diyelim seneye adam dediki tc de ekleyelim sikinti o yuzden Person person)
         {
 
         }
+
+        public List<Person> GetList()
+        {
+            return null;
+        } 
     }
 }
