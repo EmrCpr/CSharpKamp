@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
+    //ciplak class kalmasin
     public class PersonManager
     {
         //encapsulation yaptik Persondan myobj1 ayarinda person cikardik ordan cekecez 
@@ -19,5 +20,10 @@ namespace Business.Concrete
         {
             return null;
         } 
+
+        public bool CheckPerson(Person person)
+        {
+            return true;
+        }
     }
 }

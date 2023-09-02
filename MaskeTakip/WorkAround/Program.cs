@@ -1,4 +1,6 @@
-﻿namespace WorkAround
+﻿using Entities.Concrete;
+
+namespace WorkAround
 {
     class Program
     {
@@ -34,8 +36,32 @@
             sehirler1 = sehirler2;//referans esitliyorsun
             sehirler1[0] = "Adana";
             Console.WriteLine(sehirler2[0]);
-            
+
             //
+            Person person1=new Person();
+            person1.FirstName = "Engin";
+
+            Person person2=new Person();
+            person2.FirstName = "Veli";
+            //
+
+            foreach(string sehir in sehirler1 )//sehirler1'in icinde dolasip hespini yazcaz diziler icin iyi 
+            {
+                Console.WriteLine(sehir);
+            }
+
+            //Dizi kavraminin yerine gecmeye baslayan list(GENERIC COLLECTION)
+            //Odev mylist yazcam eklemeyi addsiz yapcaz 
+
+            List<string> yeniSehirler= new List<string> {"Ankara1","Istanbul1","Izmir1" };
+            yeniSehirler.Add("Hatay");
+            foreach (var sehir in yeniSehirler)
+            {
+                Console.WriteLine(sehir);
+            }
+
+
+
             Console.ReadLine();
         }
 
