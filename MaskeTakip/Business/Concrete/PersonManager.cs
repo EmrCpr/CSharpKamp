@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using MernisServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,16 @@ namespace Business.Concrete
         public List<Person> GetList()
         {
             return null;
-        } 
+        }
 
         public bool CheckPerson(Person person)
         {
-            return true;
+            //mernis kontrolu yapilacak
+            KPSPublicSoapClient client = new KPSPublicSoapClient(KPSPublicSoapClient.EndpointConfiguration.KPSPublicSoap);
+            return client.TCKimlikNoDogrulaAsync
+                (new TCKimlikNoDogrulaRequest
+                (new TCKimlikNoDogrulaRequestBody(person.NationalIdentity, person.FirstName, person.LastName, person.dateOfBirthYear)))
+                .Result.Body.TCKimlikNoDogrulaResult;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public  class PttManager
+    public class PttManager : ISupplierService//classi ciplak birakmadik
     {
         private IApplicantService _applicantService;//interface
 
@@ -18,12 +18,14 @@ namespace Business.Concrete
         }
         public void GiveMask(Person person)
         {
-            
+
             if (_applicantService.CheckPerson(person))//applicant aday demek
             {
                 Console.WriteLine(person.FirstName + "icin maske verildi");
-                Console.ReadLine();
-
+            }
+            else
+            {
+                Console.WriteLine(person.FirstName + " " + "icin maske VERILEMEDI");
             }
         }
     }
